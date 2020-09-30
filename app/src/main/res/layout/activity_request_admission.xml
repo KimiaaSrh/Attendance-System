@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".Activity.RequestActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+
+        <Spinner
+            android:id="@+id/request_type"
+            android:background="@drawable/rounded_corner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            />
+
+        <EditText
+            android:id="@+id/full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/name"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:textColor="@color/mdtp_white"
+            android:textColorHint="@color/mdtp_date_picker_month_day" />
+
+        <EditText
+            android:id="@+id/employee_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/employee_number"
+            android:hint="@string/employee_number"
+            android:inputType="text"
+            android:textColor="@color/mdtp_white"
+            android:textColorHint="@color/mdtp_date_picker_month_day" />
+
+        <LinearLayout
+            android:id="@+id/date_pickers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <ir.ac.shirazu.attendance_system.Activity.AccessibleTextView
+                android:id="@+id/date_to"
+                style="@style/text_view"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:onClick="onDateToClick"
+                android:gravity="center"
+                android:padding="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="@string/to"
+                android:textColor="@color/TextView_color"
+                android:textSize="15dp" />
+
+            <ir.ac.shirazu.attendance_system.Activity.AccessibleTextView
+                android:id="@+id/date_from"
+                style="@style/text_view"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:onClick="onDateFromClick"
+                android:gravity="center"
+                android:padding="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="@string/from"
+                android:textColor="@color/TextView_color"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="right"
+            android:text="@string/description"
+            android:textColor="@color/mdtp_white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/description"
+            style="@style/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/descriptionEditText"
+            android:background="@drawable/rounded_corner"
+            android:gravity="top|right"
+            android:hint="@string/descriptionEditText"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:scrollbars="vertical"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/request_button"
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:text="@string/add_request"
+            android:backgroundTint="@color/mdtp_accent_color"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="30dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
